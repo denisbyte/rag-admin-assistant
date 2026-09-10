@@ -12,5 +12,5 @@ def get_retriever() -> BaseRetriever:
 
     return vector_store.as_retriever(
         search_type="similarity",
-        search_kwargs={"k": 3}
+        search_kwargs={"k": 5}
     )
