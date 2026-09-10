@@ -1,6 +1,7 @@
 """
  Chargement et extraction du documents PDF
 """
+from backend.app.rag.ingestion.document_metadata import DOCUMENT_METADATA
 from pathlib import Path
 from langchain_core.documents import Document
 from pypdf import PdfReader
@@ -25,13 +26,19 @@ def load_pdf(file_path: str | Path) -> list[Document]:
         if not text.strip():
             continue
         # Création diu document Langchain
+        document_info = DOCUMENT_METADATA.get(path.name, {})
+
+        
         document = Document(
             page_content=text,
-            metadata = {
+            metadata={
                 "document": path.name,
                 "page": page_number,
+                "title": document_info.get("title"),
+                "url": document_info.get("url"),
             },
         )
+        
 
         documents.append(document)
     return documents
