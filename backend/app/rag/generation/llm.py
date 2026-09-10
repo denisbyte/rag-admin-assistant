@@ -22,6 +22,11 @@ def generate_response(prompt: str) -> str:
                 "content": prompt
             }
         ],
+        options={
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "seed": 42,
+        },
     )
 
     return response["message"]["content"]

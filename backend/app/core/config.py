@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     documents_path: str = "data/docuements"
     chroma_path: str = "data/chroma"
 
-    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "deepseek-r1:7b"
     redis_url: str = "redis://localhost:6379"
