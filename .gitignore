@@ -215,4 +215,7 @@ marimo/_lsp/
 __marimo__/
 
 # Streamlit
+# Documents et données locales
 .streamlit/secrets.toml
+data/documents/
+data/chroma/
