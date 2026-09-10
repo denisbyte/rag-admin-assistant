@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from backend.app.api.routes.chat import router as chat_router
+from backend.app.api.routes.documents import router  as document_router
 
 app = FastAPI(
     title="RAG Admin Assistant",
@@ -15,3 +16,4 @@ def health_check():
 
 
 app.include_router(chat_router)
+app.include_router(document_router)
