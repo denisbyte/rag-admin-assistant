@@ -1,0 +1,6 @@
+.chat-window {
+  height: 35vh;
+  min-height: 250px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
