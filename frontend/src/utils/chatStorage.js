@@ -2,7 +2,7 @@ const STORAGE_KEY = "rag-admin-chat-messages";
 
 export function loadMessages() {
   try {
-    const storedMessages = localStorage.getItem(STORAGE_KEY);
+    const storedMessages = sessionStorage.getItem(STORAGE_KEY);
 
     if (!storedMessages) {
       return [];
@@ -21,7 +21,7 @@ export function loadMessages() {
 
 export function saveMessages(messages) {
   try {
-    localStorage.setItem(
+    sessionStorage.setItem(
       STORAGE_KEY,
       JSON.stringify(messages)
     );
@@ -34,5 +34,5 @@ export function saveMessages(messages) {
 }
 
 export function clearMessages() {
-  localStorage.removeItem(STORAGE_KEY);
+  sessionStorage.removeItem(STORAGE_KEY);
 }
